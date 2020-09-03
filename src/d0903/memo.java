@@ -1,6 +1,6 @@
-package d0902;
+package d0903;
 
-public class ex01 {
+public class memo {
     public static void main(String[] args) {
 
     }
