@@ -1,15 +1,9 @@
-import java.util.StringJoiner;
+import java.util.*;
 
 public class Memo {
     public static void main(String[] args) {
-
-        String s = "moonch,lulu,lala";
-        String[] arr = s.split(",");
-        StringJoiner sj = new StringJoiner("  ", "<", ">");
-        for(String e : arr)
-            sj.add(e.toUpperCase());
-
-        System.out.println(sj);
+        int[] i = {1, 2};
+        System.out.println(i.length);
 
     }
 }
