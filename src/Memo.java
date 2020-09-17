@@ -6,6 +6,11 @@ interface A {
 
 public class Memo {
     public static void main(String[] args) {
+        int[] a = {1, 2, 3};
+        int[] b = new int[1];
+        b = a;
+
+        System.out.println(b[2]);
 
     }
 }
