@@ -1,16 +1,29 @@
-public class Memo {
+import java.util.*;
+
+class Memo {
     public static void main(String[] args) {
-        int n = 100;
-        int r;
+        C c = new C();
 
-        for(int i = 0; i < 20; i++) {
-            try {
-                r = n / (int) (Math.random() * 10 );
-                System.out.println(r);
-            } catch(ArithmeticException e) {
-                System.out.println(-1);
-            }
+        System.out.println(c.isF(5));
 
-        }
+    }
+}
+
+abstract class P {
+    P() {}
+
+    public boolean isF(Object x) {
+        if ( x == this )
+            return true;
+        return false;
+    }
+}
+
+class C extends P {
+    Object v = 5;
+    C() {}
+
+    public boolean isF(int x) {
+        return super.isF(x);
     }
 }
