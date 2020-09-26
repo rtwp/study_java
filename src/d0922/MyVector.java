@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-class MyVector implements List {
+public class MyVector implements List {
     Object[] data = null; // 객체를 담기 위한 객체배열
     int capacity = 0;
     int size = 0;
@@ -104,10 +104,8 @@ class MyVector implements List {
     }
 
     public boolean equals(Object o) {
-        MyVector tmp = (MyVector)o;
-        if( tmp.size == this.size)
-            if(tmp.data == this.data)
-                return true;
+        if( o == this)
+            return true;
 
         return false;
     }

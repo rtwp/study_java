@@ -1,29 +1,32 @@
+import java.sql.Array;
 import java.util.*;
 
-class Memo {
+class Memo{
     public static void main(String[] args) {
-        C c = new C();
 
-        System.out.println(c.isF(5));
+
+        T3 s = new T3();
+        T3 l;
+
+        s.age = 10;
+
+        l = s;
+
+        System.out.println(s);
+        System.out.println(l);
+
+        l.age = 20;
+        System.out.println(s);
+        System.out.println(l);
+
 
     }
 }
 
-abstract class P {
-    P() {}
+class T3 {
+    int age = 0;
 
-    public boolean isF(Object x) {
-        if ( x == this )
-            return true;
-        return false;
-    }
-}
-
-class C extends P {
-    Object v = 5;
-    C() {}
-
-    public boolean isF(int x) {
-        return super.isF(x);
+    public String toString() {
+        return age+"";
     }
 }

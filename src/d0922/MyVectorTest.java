@@ -26,5 +26,6 @@ public class MyVectorTest {
         l.add(3);
 
         System.out.println(v.equals(l));
+        System.out.println(rv.equals(l));
     }
 }
