@@ -58,6 +58,6 @@ public class EnumEx04 {
         System.out.printf("t1 = %s, %d\n", t4.name(), t4.ordinal());
         System.out.printf("t1 = %s, %d\n", t5.name(), t5.ordinal());
         System.out.println("t1 == t2 ? " + (t1 == t2));
-        System.out.println("t1.comopareTo(t3) = " + t1.compareTo(t3));
+        System.out.println("t1.compareTo(t3) = " + t1.compareTo(t3));
     }
 }
