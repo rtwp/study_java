@@ -23,6 +23,21 @@ class SutdaCard {
         this.isKwang = isKwang;
     }
 
+    @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof SutdaCard) {
+            SutdaCard c = (SutdaCard)obj;
+            return num==c.num && isKwang==c.isKwang;
+        } else {
+            return false;
+        }
+    }
+
     public String toString() {
         return num + (isKwang?"K":"");
     }

@@ -3,7 +3,8 @@ import java.util.*;
 
 class Stu implements Comparable<Stu>{
     String name;
-    int ban, no, kr, en, mt, total, rank;
+    int ban, no, kr, en, mt, total;
+    int sRank, cRank;
 
     Stu(String name, int ban, int no,
             int kr, int en, int mt) {
@@ -13,7 +14,9 @@ class Stu implements Comparable<Stu>{
         this.kr = kr;
         this.en = en;
         this.mt = mt;
+        total = kr+en+mt;
     }
+
 
     int getTotal() { return total; }
 
@@ -29,16 +32,17 @@ class Stu implements Comparable<Stu>{
                 +","+en
                 +","+getTotal()
                 +","+getAverage()
-                +","+rank;
+                +","+sRank
+                +","+cRank;
     }
 
     @Override
     public int compareTo(Stu o) {
 
         if( this.getTotal() >= o.getTotal() )
-            return 1;
-        else
             return -1;
+        else
+            return 1;
 
         /* 8이전
         if( this.name.charAt(0) >= o.name.charAt(0) )
