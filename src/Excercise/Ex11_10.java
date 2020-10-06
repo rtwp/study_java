@@ -9,7 +9,10 @@ public class Ex11_10 {
         for(int i = 0; set.size() < 25; i++)
             set.add((int)(Math.random() * 30) + 1 + "");
 
-        Iterator it = set.iterator();
+        ArrayList al = new ArrayList(set);
+        Collections.shuffle(al);
+
+        Iterator it = al.iterator();
 
         for(int i = 0; i < board.length ; i++) {
             for(int j = 0; j < board[i].length; j++) {

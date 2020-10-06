@@ -22,7 +22,10 @@ public class Ex11_01 {
 
         kyo.addAll(list1); kyo.retainAll(list2);
         cha.addAll(list1); cha.removeAll(list2);
-        hap.addAll(list1); hap.addAll(list2);
+
+        hap.addAll(list1);
+        hap.removeAll(kyo);
+        hap.addAll(list2);
 
         System.out.println("list1="+list1);
         System.out.println("list2="+list2);

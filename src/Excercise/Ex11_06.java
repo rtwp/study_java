@@ -5,17 +5,17 @@ public class Ex11_06 {
     static int getGroupCount(TreeSet tset, int from, int to) {
         // from ~ to 사이의 평균점수를 가진 학생의 수를 반환
 
-        tset.subSet(from, to);
+        Stu s1 = new Stu("",0,0,from,from,from);
+        Stu s2 = new Stu("",0,0,to,to,to);
 
-        return 0;
+        return tset.subSet(s1, s2).size();
     }
 
     public static void main(String[] args) {
         TreeSet set = new TreeSet(new Comparator<Stu>() {
             public int compare(Stu s1, Stu s2) {
                 // 평균점수에 따라 정렬
-                return s1.getAverage() > s2.getAverage() ? 1 : -1;
-
+                return (int)(s1.getAverage() - s2.getAverage());
             }
         });
 
@@ -29,6 +29,7 @@ public class Ex11_06 {
         while(it.hasNext())
             System.out.println(it.next());
 
+        System.out.println();
         System.out.println("[60~69] :"+getGroupCount(set,60,70));
         System.out.println("[70~79] :"+getGroupCount(set,70,80));
         System.out.println("[80~89] :"+getGroupCount(set,80,90));

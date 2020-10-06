@@ -6,13 +6,22 @@ class ClassTotalComparator implements Comparator {
     public int compare(Object o1, Object o2) {
         Stu s1 = (Stu)o1;
         Stu s2 = (Stu)o2;
+
+        int result = s1.ban - s2.ban;
+
+        if(result == 0)
+            result = s2.total - s1.total;
+
+        return result;
+
+        /*
         if( s1.ban == s2.ban) {
             if(s1.total <= s2.total)
                 return 1;
             else
                 return -1;
         }
-        return 0;
+        */
     }
 }
 
@@ -26,23 +35,20 @@ public class Ex11_09 {
         int prevTotal = -1;
         int length = list.size();
 
-        Iterator it = list.iterator();
-        int i = 1;
+        for(int i = 0, n = 0; i < length; i++, n++) {
+            Stu s = (Stu)list.get(i);
 
-        while(it.hasNext()) {
-            Stu s = (Stu)it.next();
-            if(s.ban != prevBan)
-                prevRank = prevTotal = -1;
-
-            if( s.total == prevTotal)
+            if( s.ban != prevBan) {
+                prevRank = -1; prevTotal = -1; n =0;
+            }
+            if(s.total == prevTotal)
                 s.cRank = prevRank;
-            else
-                s.cRank = i;
-
+            else {
+                s.cRank = n + 1;
+            }
             prevBan = s.ban;
             prevTotal = s.total;
             prevRank = s.cRank;
-            i++;
         }
     }
 

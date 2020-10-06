@@ -6,6 +6,14 @@ class BNAscending implements Comparator {
     public int compare(Object o1, Object o2) {
         Stu s1 = (Stu)o1;
         Stu s2 = (Stu)o2;
+
+        int result = s1.ban - s2.ban;
+
+        if(result == 0){
+            return s1.no - s2.no;}
+
+        return result;
+        /*
         if( s1.ban > s2.ban)
             return 1;
         else if( s1.ban < s2.ban)
@@ -17,6 +25,7 @@ class BNAscending implements Comparator {
                 return -1;
             else
                 return 0;
+            */
     }
 }
 public class Ex11_07 {
@@ -30,7 +39,7 @@ public class Ex11_07 {
 
         Iterator it = list.iterator();
 
-        for(int i = 1; i <= list.size(); i++) {
+        for(int i = 1; i <= length; i++) {
             if(it.hasNext()) {
                 Stu s = (Stu)it.next();
                 if( s.total == prevTotal)
@@ -52,6 +61,7 @@ public class Ex11_07 {
         list.add(new Stu("김자바",1,2,80,80,90));
 
         calculateSchoolRank(list);
+        //Collections.sort(list, new BNAscending());
 
         Iterator it = list.iterator();
 
